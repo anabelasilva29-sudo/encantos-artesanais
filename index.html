@@ -15,7 +15,240 @@ body {
 }
 
 header {
+online
+Hoje
+Hoje
+Adicione-me como contacto no WhatsApp. https://wa.me/qr/6IQFO6FSU7WYK1Adicione-me como contacto no WhatsApp. https://wa.me/qr/6IQFO6FSU7WYK1Adicione-me como contacto no WhatsApp. https://wa.me/qr/6IQFO6FSU7WYK1Adicione-me como contacto no WhatsApp. https://wa.me/qr/6IQFO6FSU7WYK1Adicione-me como contacto no WhatsApp. https://wa.me/qr/6IQFO6FSU7WYK1
+Adicione-me como contacto no WhatsApp. https://wa.me/qr/6IQFO6FSU7WYK1
+13:10
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encantos Artesanais</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+<a href="https://wa.me/351934712260" 
+   target="_blank" 
+   style="
+   position: fixed;
+   bottom: 20px;
+   right: 20px;
+   background: #25D366;
+   color: white;
+   padding: 15px 18px;
+   border-radius: 50px;
+   text-decoration: none;
+   font-weight: bold;
+   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+   ">
+   💬 WhatsApp
+</a>    
+margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8fbff;
+    color: #333;
+}
+
+header {
     background: linear-gradient(135deg, #4a90e2, #6fb1fc);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 40px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.card h3 {
+    margin: 10px 0 5px 0;
+}
+
+.preco {
+    font-weight: 600;
+    color: #4a90e2;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #4a90e2;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #eee;
+    font-size: 14px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Encantos Artesanais</h1>
+    <p>Peças únicas feitas à mão com amor 🤍</p>
+</header>
+
+<section class="produtos" id="listaProdutos"></section>
+
+<footer>
+    © 2026 Encantos Artesanais - Todos os direitos reservados
+</footer>
+
+<script>
+function carregarProdutos() {
+    const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+    const lista = document.getElementById("listaProdutos");
+    lista.innerHTML = "";
+
+    produtos.forEach(produto => {
+        lista.innerHTML += `
+        <div class="card">
+            <img src="${produto.imagem}" alt="${produto.nome}">
+            <div class="card-content">
+                <h3>${produto.nome}</h3>
+                <div class="preco">€ ${produto.preco}</div>
+                <a class="btn" target="_blank" 
+                   href="https://wa.me/351SEUNUMERO?text=Olá! Tenho interesse no produto ${produto.nome}">
+                   Comprar pelo WhatsApp
+                </a>
+            </div>
+        </div>
+        `;
+    });
+}
+
+carregarProdutos();
+</script>
+
+</body>
+</html>
+14:52
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Admin - Encantos</title>
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+}
+input {
+    margin: 5px;
+    padding: 8px;
+}
+button {
+    padding: 8px 15px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h2>Área Administrativa</h2>
+
+<div id="login">
+    <input type="password" id="senha" placeholder="Digite a senha">
+    <button onclick="verificarSenha()">Entrar</button>
+</div>
+
+<div id="painel" style="display:none;">
+    <h3>Adicionar Produto</h3>
+    <input type="text" id="nome" placeholder="Nome do produto"><br>
+    <input type="text" id="preco" placeholder="Preço"><br>
+    <input type="text" id="imagem" placeholder="Link da imagem"><br>
+    <button onclick="adicionarProduto()">Adicionar</button>
+</div>
+
+<script>
+const senhaCorreta = "encantos2026"; // podes mudar
+
+function verificarSenha() {
+    const senha = document.getElementById("senha").value;
+    if (senha === senhaCorreta) {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("painel").style.display = "block";
+    } else {
+        alert("Senha incorreta");
+    }
+}
+
+function adicionarProduto() {
+    const nome = document.getElementById("nome").value;
+    const preco = document.getElementById("preco").value;
+    const imagem = document.getElementById("imagem").value;
+
+    const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+
+    produtos.push({ nome, preco, imagem });
+
+    localStorage.setItem("produtos", JSON.stringify(produtos));
+
+    alert("Produto adicionado com sucesso!");
+}
+</script>
+
+</body>
+</html>
+14:53
+1 mensagem não lida
+<div style="margin-top:15px;">
+    <a href="https://instagram.com/cantinho_do_artesanato" target="_blank" 
+       style="color:white; text-decoration:none; font-weight:500;">
+       📸 Siga-nos no Instagram
+    </a>
+</div>    
+background: linear-gradient(135deg, #4a90e2, #6fb1fc);
     color: white;
     text-align: center;
     padding: 40px 20px;

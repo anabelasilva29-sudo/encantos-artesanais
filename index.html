@@ -14,9 +14,19 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, #6fa8dc, #3d85c6);
+    background: linear-gradient(135deg, #f48fb1, #ce93d8);
     color: white;
     padding: 60px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 18px;
 }
 
 .container {
@@ -29,16 +39,25 @@ header {
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     display: inline-block;
-    max-width: 300px;
+    max-width: 350px;
 }
 
-.produto img {   
- width: 100%;
+.produto img {
+    width: 100%;
     border-radius: 10px;
 }
 
+.produto h2 {
+    margin: 15px 0 5px 0;
+}
+
+.produto p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 button {
-    background-color: #3d85c6;
+    background-color: #ce93d8;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -48,7 +67,14 @@ button {
 }
 
 button:hover {
-    background-color: #2b5f8a;
+    background-color: #ab47bc;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background: #e0e0e0;
+    font-size: 14px;
 }
 </style>
 </head>
@@ -57,17 +83,21 @@ button:hover {
 
 <header>
     <h1>Encantos Artesanais</h1>
-    <p>Peças feitas à mão com amor 🤍</p>
+    <p>Peças únicas feitas à mão com amor 🤍</p>
 </header>
 
 <div class="container">
     <div class="produto">
-        <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?w=600" alt="Velas Azuis">
-        <h2>Velas Azuis</h2>
-        <p>€ 10,00</p>
+        <img src="vela-rosa.jpg" alt="Vela Rosa Artesanal">
+        <h2>Vela Rosa Artesanal</h2>
+        <p>€ 12,00</p>
         <button>Comprar</button>
     </div>
 </div>
+
+<footer>
+    © 2026 Encantos Artesanais - Todos os direitos reservados
+</footer>
 
 </body>
 </html>
